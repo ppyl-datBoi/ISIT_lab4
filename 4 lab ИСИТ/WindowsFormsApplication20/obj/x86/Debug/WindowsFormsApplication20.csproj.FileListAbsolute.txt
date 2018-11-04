@@ -1,0 +1,23 @@
+c:\users\datboi\documents\visual studio 2015\Projects\WindowsFormsApplication20\WindowsFormsApplication20\bin\x86\Debug\WindowsFormsApplication20.exe
+c:\users\datboi\documents\visual studio 2015\Projects\WindowsFormsApplication20\WindowsFormsApplication20\bin\x86\Debug\WindowsFormsApplication20.pdb
+c:\users\datboi\documents\visual studio 2015\Projects\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.csprojResolveAssemblyReference.cache
+c:\users\datboi\documents\visual studio 2015\Projects\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.baza.resources
+c:\users\datboi\documents\visual studio 2015\Projects\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.Form1.resources
+c:\users\datboi\documents\visual studio 2015\Projects\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.Properties.Resources.resources
+c:\users\datboi\documents\visual studio 2015\Projects\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.csproj.GenerateResource.Cache
+c:\users\datboi\documents\visual studio 2015\Projects\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.exe
+c:\users\datboi\documents\visual studio 2015\Projects\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.pdb
+c:\users\datboi\documents\visual studio 2015\Projects\WindowsFormsApplication20\WindowsFormsApplication20\bin\x86\Debug\WindowsFormsApplication20.exe.config
+F:\2018-19\StolbovAndIstomin\WindowsFormsApplication20\WindowsFormsApplication20\bin\x86\Debug\WindowsFormsApplication20.exe.config
+F:\2018-19\StolbovAndIstomin\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.exe
+F:\2018-19\StolbovAndIstomin\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.pdb
+E:\2018-19\StolbovAndIstomin\WindowsFormsApplication20\WindowsFormsApplication20\bin\x86\Debug\WindowsFormsApplication20.exe.config
+E:\2018-19\StolbovAndIstomin\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.exe
+E:\2018-19\StolbovAndIstomin\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.pdb
+E:\2018-19\StolbovAndIstomin\WindowsFormsApplication20\WindowsFormsApplication20\bin\x86\Debug\WindowsFormsApplication20.exe
+E:\2018-19\StolbovAndIstomin\WindowsFormsApplication20\WindowsFormsApplication20\bin\x86\Debug\WindowsFormsApplication20.pdb
+E:\2018-19\StolbovAndIstomin\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.csprojResolveAssemblyReference.cache
+E:\2018-19\StolbovAndIstomin\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.baza.resources
+E:\2018-19\StolbovAndIstomin\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.Form1.resources
+E:\2018-19\StolbovAndIstomin\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.Properties.Resources.resources
+E:\2018-19\StolbovAndIstomin\WindowsFormsApplication20\WindowsFormsApplication20\obj\x86\Debug\WindowsFormsApplication20.csproj.GenerateResource.Cache
