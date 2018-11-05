@@ -151,7 +151,8 @@ namespace WindowsFormsApplication20
 
         private void button9_Click(object sender, EventArgs e)
         {
-            //int[,] ar = [5,5];
+            //решение Симпсона
+            int[,] arr = new  int[dataGridView5.ColumnCount, dataGridView5.RowCount-1];
             
                 for (int i = 0; i < dataGridView5.ColumnCount; i++) //главный элемент
                 {
@@ -161,21 +162,37 @@ namespace WindowsFormsApplication20
                         {
                             for (int k = 0; k < dataGridView5.RowCount; k++)
                             {
-                                if (Convert.ToInt32(dataGridView5.Rows[k].Cells[i].Value) < Convert.ToInt32(dataGridView5.Rows[k].Cells[j].Value)) //если главный элемент значимее элемента для сравнения, то
-                                                                                                               //  if(Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value) > Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value))
+                                if (Convert.ToInt32(dataGridView5.Rows[k].Cells[i].Value) < Convert.ToInt32(dataGridView5.Rows[k].Cells[j].Value)) //если главный элемент значимее элемента для сравнения, то                                                                             
                                 {
-                                    dataGridView7[i, j].Value = Convert.ToInt32(dataGridView7[i, j].Value) + 1;
+                                //dataGridView7[i, j].Value = Convert.ToInt32(dataGridView7[i, j].Value) + 1;
+                                arr[i, j] = arr[i, j] + 1;
                                 }
                             }
                         }
                     }
                 }
-            
-                foreach (DataGridViewRow sp in dataGridView7.Rows)
-            {
 
+            int[] max = new int[dataGridView5.ColumnCount];
+            int maxv = 0;
+            //выбрать максимальное
+            for (int i = 0; i < dataGridView5.RowCount -1;i++)
+            {
+                maxv = arr[i, 0];
+                for (int j = 0; j < dataGridView5.ColumnCount; j++)
+                {
+                    if (arr[i, j] > maxv)
+                        maxv = arr[i, j];  
+                }
+                max[i] = maxv;
+            }
+
+            //вывести в грид решения
+            for (int i = 0; i < dataGridView5.ColumnCount; i++)
+            {
+                dataGridView6.Rows.Add(max[i].ToString());
             }
         }
+        
 
         private void button10_Click(object sender, EventArgs e)
         {
@@ -184,6 +201,7 @@ namespace WindowsFormsApplication20
 
         private void button11_Click(object sender, EventArgs e)
         {
+            //заполнение таблиц
             dataGridView5.ColumnCount = 5;
             string[] row = { "1","3","2","4","5"};
             dataGridView5.Rows.Add(row);
@@ -195,21 +213,6 @@ namespace WindowsFormsApplication20
             dataGridView5.Rows.Add(row);
             row = new string[] { "3", "2", "4", "1", "5" };
             dataGridView5.Rows.Add(row);
-
-            for (int i=0;i<5;i++)
-            dataGridView6.Rows.Add("0");
-
-            dataGridView7.ColumnCount = 5;
-            string[] row1 = { "0", "0", "0", "0", "0" };
-            dataGridView7.Rows.Add(row1);
-            row = new string[] { "0", "0", "0", "0", "0" };
-            dataGridView7.Rows.Add(row1);
-            row = new string[] { "0", "0", "0", "0", "0" };
-            dataGridView7.Rows.Add(row1);
-            row = new string[] { "0", "0", "0", "0", "0" };
-            dataGridView7.Rows.Add(row1);
-            row = new string[] { "0", "0", "0", "0", "0" };
-            dataGridView7.Rows.Add(row1);
         }
 
         private void button12_Click(object sender, EventArgs e)
