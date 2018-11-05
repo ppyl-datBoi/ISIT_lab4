@@ -247,6 +247,24 @@ namespace WindowsFormsApplication20
             for (int i = 0; i < 5; i++)
                 dataGridView4.Rows.Add("0");
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            dataGridView8.ColumnCount = 5;
+            string[] row = { "1", "3", "2", "4", "5" };
+            dataGridView8.Rows.Add(row);
+            row = new string[] { "2", "1", "3", "5", "4" };
+            dataGridView8.Rows.Add(row);
+            row = new string[] { "3", "1", "2", "4", "5" };
+            dataGridView8.Rows.Add(row);
+            row = new string[] { "2", "3", "4", "5", "1" };
+            dataGridView8.Rows.Add(row);
+            row = new string[] { "3", "2", "4", "1", "5" };
+            dataGridView8.Rows.Add(row);
+
+            for (int i = 0; i < 5; i++)
+                dataGridView9.Rows.Add("0");
+        }
     }
     }
 
