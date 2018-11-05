@@ -1,0 +1,10 @@
+C:\Users\User\Documents\GitHub\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication20\bin\Debug\WindowsFormsApplication20.exe.config
+C:\Users\User\Documents\GitHub\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication20\bin\Debug\WindowsFormsApplication20.exe
+C:\Users\User\Documents\GitHub\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication20\bin\Debug\WindowsFormsApplication20.pdb
+C:\Users\User\Documents\GitHub\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.baza.resources
+C:\Users\User\Documents\GitHub\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.Form1.resources
+C:\Users\User\Documents\GitHub\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.csproj.GenerateResource.Cache
+C:\Users\User\Documents\GitHub\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.exe
+C:\Users\User\Documents\GitHub\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.pdb

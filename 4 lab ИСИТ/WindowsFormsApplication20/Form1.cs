@@ -33,7 +33,7 @@ namespace WindowsFormsApplication20
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "bazaDataSet.various". При необходимости она может быть перемещена или удалена.
-            this.variousTableAdapter.Fill(this.bazaDataSet.various);
+            //this.variousTableAdapter.Fill(this.bazaDataSet.various);
 
             foreach (DataGridViewRow check in variousDataGridView.Rows)
             {
@@ -164,10 +164,7 @@ namespace WindowsFormsApplication20
                                 if (Convert.ToInt32(dataGridView5.Rows[k].Cells[i].Value) < Convert.ToInt32(dataGridView5.Rows[k].Cells[j].Value)) //если главный элемент значимее элемента для сравнения, то
                                                                                                                //  if(Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value) > Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value))
                                 {
-                                    //ar[i, j] ++;
                                     dataGridView7[i, j].Value = Convert.ToInt32(dataGridView7[i, j].Value) + 1;
-                                    //listBox2.Items. = Convert.ToInt32(listBox2.Items[1]) + 1;
-                                    // dataGridView4.Rows[i].Cells[0].Value = Convert.ToInt32(dataGridView4.Rows[i].Cells[0].Value) + 1; //в таблицу результатов добавляем +1
                                 }
                             }
                         }
@@ -183,6 +180,72 @@ namespace WindowsFormsApplication20
         private void button10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            dataGridView5.ColumnCount = 5;
+            string[] row = { "1","3","2","4","5"};
+            dataGridView5.Rows.Add(row);
+            row = new string[] { "2", "1", "3", "5", "4" };
+            dataGridView5.Rows.Add(row);
+            row = new string[] { "3", "1", "2", "4", "5" };
+            dataGridView5.Rows.Add(row);
+            row = new string[] { "2", "3", "4", "5", "1" };
+            dataGridView5.Rows.Add(row);
+            row = new string[] { "3", "2", "4", "1", "5" };
+            dataGridView5.Rows.Add(row);
+
+            for (int i=0;i<5;i++)
+            dataGridView6.Rows.Add("0");
+
+            dataGridView7.ColumnCount = 5;
+            string[] row1 = { "0", "0", "0", "0", "0" };
+            dataGridView7.Rows.Add(row1);
+            row = new string[] { "0", "0", "0", "0", "0" };
+            dataGridView7.Rows.Add(row1);
+            row = new string[] { "0", "0", "0", "0", "0" };
+            dataGridView7.Rows.Add(row1);
+            row = new string[] { "0", "0", "0", "0", "0" };
+            dataGridView7.Rows.Add(row1);
+            row = new string[] { "0", "0", "0", "0", "0" };
+            dataGridView7.Rows.Add(row1);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            dataGridView1.ColumnCount = 5;
+            string[] row = { "1", "3", "2", "4", "5" };
+            dataGridView1.Rows.Add(row);
+            row = new string[] { "2", "1", "3", "5", "4" };
+            dataGridView1.Rows.Add(row);
+            row = new string[] { "3", "1", "2", "4", "5" };
+            dataGridView1.Rows.Add(row);
+            row = new string[] { "2", "3", "4", "5", "1" };
+            dataGridView1.Rows.Add(row);
+            row = new string[] { "3", "2", "4", "1", "5" };
+            dataGridView1.Rows.Add(row);
+
+            for (int i = 0; i < 5; i++)
+                dataGridView2.Rows.Add("0");
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            dataGridView3.ColumnCount = 5;
+            string[] row = { "1", "3", "2", "4", "5" };
+            dataGridView3.Rows.Add(row);
+            row = new string[] { "2", "1", "3", "5", "4" };
+            dataGridView3.Rows.Add(row);
+            row = new string[] { "3", "1", "2", "4", "5" };
+            dataGridView3.Rows.Add(row);
+            row = new string[] { "2", "3", "4", "5", "1" };
+            dataGridView3.Rows.Add(row);
+            row = new string[] { "3", "2", "4", "1", "5" };
+            dataGridView3.Rows.Add(row);
+
+            for (int i = 0; i < 5; i++)
+                dataGridView4.Rows.Add("0");
         }
     }
     }
