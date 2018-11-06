@@ -174,13 +174,13 @@ namespace WindowsFormsApplication20
 
             int[] max = new int[dataGridView5.ColumnCount];
             int maxv = 0;
-            //выбрать максимальное
+            //выбрать минимальное по строкам, побеждает с максимальным из мах
             for (int i = 0; i < dataGridView5.RowCount -1;i++)
             {
-                maxv = arr[i, 0];
+                maxv = arr[1, 2];
                 for (int j = 0; j < dataGridView5.ColumnCount; j++)
                 {
-                    if (arr[i, j] > maxv)
+                    if (arr[i, j] < maxv && arr[i,j]!=0)
                         maxv = arr[i, j];  
                 }
                 max[i] = maxv;
@@ -196,6 +196,48 @@ namespace WindowsFormsApplication20
 
         private void button10_Click(object sender, EventArgs e)
         {
+            string[] temp = new string[dataGridView9.RowCount-1];
+
+            for (int i = 0; i < dataGridView9.RowCount-1; i++)
+            {
+                temp[i] = "";
+                for (int j = 0; j < dataGridView9.ColumnCount; j++)
+                {
+                    temp[i] += dataGridView9[j,i].Value.ToString();
+                }
+            }
+
+            List<string> tt = new List<string>();//сами варианты
+            tt.Add( temp[0]);
+            List<int> tt2 = new List<int>();//их кол-во
+            tt2.Add(1);
+            bool a;
+            for (int i =1; i < dataGridView9.RowCount - 1; i++)
+            {
+                a = false;
+                for (int j = 0; j<tt.Count; j++)
+                {
+                    if (tt[j] == temp[i])
+                    {
+                        a = true;
+                        tt2[j]++;
+                    }
+
+                }
+                if (!a)
+                {
+                    tt.Add(temp[i]);
+                    tt2.Add(1);
+                }
+            }
+            int maxball = dataGridView9.ColumnCount;
+            int[] candidat = new int[dataGridView9.ColumnCount];//candidat[x] += tt2[i] * ball in tt[i]
+            for(int i = 0; i<tt.Count; i++)//из всех групп 12345 берем каждую группу отдельно и считаем баллы
+                for (int j = 0; j<tt[i].Length; j++)//
+                {
+                    if(j< tt[i].Length-2)
+                    candidat[Convert.ToInt32(tt[i][j])] += tt2[i] * (maxball - j);
+                }
 
         }
 
@@ -253,20 +295,30 @@ namespace WindowsFormsApplication20
 
         private void button14_Click(object sender, EventArgs e)
         {
-            dataGridView8.ColumnCount = 5;
+            dataGridView9.ColumnCount = 5;
             string[] row = { "1", "3", "2", "4", "5" };
-            dataGridView8.Rows.Add(row);
+            for (int i = 0; i < 5; i++)
+                dataGridView9.Rows.Add(row);
+
             row = new string[] { "2", "1", "3", "5", "4" };
-            dataGridView8.Rows.Add(row);
+            for (int i = 0;i<3;i++)
+            dataGridView9.Rows.Add(row);
+
             row = new string[] { "3", "1", "2", "4", "5" };
-            dataGridView8.Rows.Add(row);
-            row = new string[] { "2", "3", "4", "5", "1" };
-            dataGridView8.Rows.Add(row);
-            row = new string[] { "3", "2", "4", "1", "5" };
-            dataGridView8.Rows.Add(row);
+            for (int i = 0; i < 5; i++)
+                dataGridView9.Rows.Add(row);
+
+            
+                row = new string[] { "2", "3", "4", "5", "1" };
+            for (int i = 0; i < 10; i++)
+                dataGridView9.Rows.Add(row);
+            
+                row = new string[] { "3", "2", "4", "1", "5" };
+            for (int i = 0; i < 4; i++)
+                dataGridView9.Rows.Add(row);
 
             for (int i = 0; i < 5; i++)
-                dataGridView9.Rows.Add("0");
+                dataGridView8.Rows.Add("0");
         }
     }
     }
