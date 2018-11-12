@@ -19,3 +19,13 @@ C:\Users\Evsei\Desktop\istomin\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication2
 C:\Users\Evsei\Desktop\istomin\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.csproj.CoreCompileInputs.cache
 C:\Users\Evsei\Desktop\istomin\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.exe
 C:\Users\Evsei\Desktop\istomin\ISIT_lab4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.pdb
+C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplication20\bin\Debug\WindowsFormsApplication20.exe.config
+C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplication20\bin\Debug\WindowsFormsApplication20.exe
+C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplication20\bin\Debug\WindowsFormsApplication20.pdb
+C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.baza.resources
+C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.Form1.resources
+C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.Properties.Resources.resources
+C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.exe
+C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.pdb

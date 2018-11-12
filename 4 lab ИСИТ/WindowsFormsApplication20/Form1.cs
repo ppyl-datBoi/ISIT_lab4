@@ -191,12 +191,13 @@ namespace WindowsFormsApplication20
             {
                 dataGridView6.Rows.Add(max[i].ToString());
             }
+
         }
         
 
         private void button10_Click(object sender, EventArgs e)
         {
-            string[] temp = new string[dataGridView9.RowCount-1];
+            string[] temp = new string[dataGridView9.RowCount - 1];
 
             for (int i = 0; i < dataGridView9.RowCount-1; i++)
             {
@@ -207,12 +208,12 @@ namespace WindowsFormsApplication20
                 }
             }
 
-            List<string> tt = new List<string>();//сами варианты
+            List<string> tt = new List<string>();//сами варианты 12345, 12354 и т.д.
             tt.Add( temp[0]);
             List<int> tt2 = new List<int>();//их кол-во
             tt2.Add(1);
             bool a;
-            for (int i =1; i < dataGridView9.RowCount - 1; i++)
+            for (int i =1; i < dataGridView9.RowCount - 1; i++)//группируем голоса
             {
                 a = false;
                 for (int j = 0; j<tt.Count; j++)
@@ -230,16 +231,31 @@ namespace WindowsFormsApplication20
                     tt2.Add(1);
                 }
             }
-            int maxball = dataGridView9.ColumnCount;
-            int[] candidat = new int[dataGridView9.ColumnCount];//candidat[x] += tt2[i] * ball in tt[i]
-            for(int i = 0; i<tt.Count; i++)//из всех групп 12345 берем каждую группу отдельно и считаем баллы
-                for (int j = 0; j<tt[i].Length; j++)//
+            int candidatcount = dataGridView9.ColumnCount;
+            int[] candidat = new int[candidatcount];//candidat[x] += tt2[i] * ball in tt[i]
+            for (int i = 0; i<tt.Count; i++)//из всех групп 12345 берем каждую группу отдельно и считаем баллы
+                for (int j = 0; j<tt[i].Length; j++)//выбирае каждого кандидата из группы 1>2>3>4>5
                 {
-                    if(j< tt[i].Length-2)
-                    candidat[Convert.ToInt32(tt[i][j])] += tt2[i] * (maxball - j);
+                    string pos = Convert.ToString(tt[i][j]);
+                    if (j< tt[i].Length-1)//если позиция кандидата не последняя
+                    candidat[Convert.ToInt32(pos)-1] += tt2[i] * (candidatcount - j);
                 }
+            dataGridView8.Rows.Clear();
+            int max = 0, maxi = 0;
+            for (int i = 0; i<candidat.Length; i++)
+            {
+                if (candidat[i] > max)
+                {
+                    max = candidat[i];
+                    maxi = i+1;
+                }
+                dataGridView8.Rows.Add(candidat[i].ToString());
+            }
 
+
+            label4.Text = "Победитель: \nкандидат \"a" + maxi + "\" набрал " + max + " баллов";
         }
+        
 
         private void button11_Click(object sender, EventArgs e)
         {
