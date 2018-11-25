@@ -11,6 +11,8 @@ namespace WindowsFormsApplication20
 {
     public partial class Form1 : Form
     {
+        solution solu = new solution();
+
         public Form1()
         {
             InitializeComponent();
@@ -98,53 +100,70 @@ namespace WindowsFormsApplication20
 
         private void button7_Click(object sender, EventArgs e) //подсчет голосов
         {
-            foreach(DataGridViewRow dgw in dataGridView1.Rows) //для каждого эксперта высчитываем
+            //передача в массив
+            int[,] array = new int[dataGridView1.RowCount - 1, dataGridView1.ColumnCount];
+            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
             {
-                for(int i=0; i<dataGridView1.ColumnCount; i++) //главный элемент
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
                 {
-                    for (int j = 0; j < dataGridView1.ColumnCount; j++) //элемент с которым сравниваем
-                    {
-                        if(i != j) //не сравнимаем с самим собой
-                        {
-                            if (Convert.ToInt32(dgw.Cells[i].Value) < Convert.ToInt32(dgw.Cells[j].Value)) //если главный элемент значимее элемента для сравнения, то
-                            //  if(Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value) > Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value))
-                            {
-                                //listBox2.Items. = Convert.ToInt32(listBox2.Items[1]) + 1;
-                                dataGridView2.Rows[i].Cells[0].Value = Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value) + 1; //в таблицу результатов добавляем +1
-                                   
-                            }
-                        }
-                    }
+                    array[i, j] = Convert.ToInt32(dataGridView1[i, j].Value);
                 }
             }
-           
+
+            //решение
+            int [] reshenie = solu.yavno(array);
+
+            //загружаем решение
+            for (int k = 0; k < reshenie.GetLength(0); k++)
+            {
+              dataGridView2[0,k].Value = reshenie[k];
+            }
             
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow dgw in dataGridView3.Rows) //для каждого эксперта высчитываем
-            {
-                for (int i = 0; i < dataGridView3.ColumnCount; i++) //главный элемент
-                {
-                    for (int j = 0; j < dataGridView3.ColumnCount; j++) //элемент с которым сравниваем
-                    {
-                        if (i != j) //не сравнимаем с самим собой
-                        {
-                            if (Convert.ToInt32(dgw.Cells[i].Value) < Convert.ToInt32(dgw.Cells[j].Value)) //если главный элемент значимее элемента для сравнения, то
-                            //  if(Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value) > Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value))
-                            {
-                                //listBox2.Items. = Convert.ToInt32(listBox2.Items[1]) + 1;
-                                dataGridView4.Rows[i].Cells[0].Value = Convert.ToInt32(dataGridView4.Rows[i].Cells[0].Value) + 1; //в таблицу результатов добавляем +1
+            //foreach (DataGridViewRow dgw in dataGridView3.Rows) //для каждого эксперта высчитываем
+            //{
+            //    for (int i = 0; i < dataGridView3.ColumnCount; i++) //главный элемент
+            //    {
+            //        for (int j = 0; j < dataGridView3.ColumnCount; j++) //элемент с которым сравниваем
+            //        {
+            //            if (i != j) //не сравнимаем с самим собой
+            //            {
+            //                if (Convert.ToInt32(dgw.Cells[i].Value) < Convert.ToInt32(dgw.Cells[j].Value)) //если главный элемент значимее элемента для сравнения, то
+            //                //  if(Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value) > Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value))
+            //                {
+            //                    //listBox2.Items. = Convert.ToInt32(listBox2.Items[1]) + 1;
+            //                    dataGridView4.Rows[i].Cells[0].Value = Convert.ToInt32(dataGridView4.Rows[i].Cells[0].Value) + 1; //в таблицу результатов добавляем +1
 
-                            }
-                            else
-                            {
-                                dataGridView4.Rows[i].Cells[0].Value = Convert.ToInt32(dataGridView4.Rows[i].Cells[0].Value) - 1;
-                            }
-                        }
-                    }
+            //                }
+            //                else
+            //                {
+            //                    dataGridView4.Rows[i].Cells[0].Value = Convert.ToInt32(dataGridView4.Rows[i].Cells[0].Value) - 1;
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+
+            //передача в массив
+            int[,] array = new int[dataGridView3.RowCount - 1, dataGridView3.ColumnCount];
+            for (int i = 0; i < dataGridView3.RowCount - 1; i++)
+            {
+                for (int j = 0; j < dataGridView3.ColumnCount; j++)
+                {
+                    array[i, j] = Convert.ToInt32(dataGridView3[i, j].Value);
                 }
+            }
+
+            //решение
+            int[] reshenie = solu.kopland(array);
+
+            //загружаем решение
+            for (int k = 0; k < reshenie.GetLength(0); k++)
+            {
+                dataGridView4[0, k].Value = reshenie[k];
             }
 
         }
@@ -152,44 +171,22 @@ namespace WindowsFormsApplication20
         private void button9_Click(object sender, EventArgs e)
         {
             //решение Симпсона
-            int[,] arr = new  int[dataGridView5.ColumnCount, dataGridView5.RowCount-1];
-            
-                for (int i = 0; i < dataGridView5.ColumnCount; i++) //главный элемент
-                {
-                    for (int j = 0; j < dataGridView5.ColumnCount; j++) //элемент с которым сравниваем
-                    {
-                        if (i != j) //не сравнимаем с самим собой
-                        {
-                            for (int k = 0; k < dataGridView5.RowCount; k++)
-                            {
-                                if (Convert.ToInt32(dataGridView5.Rows[k].Cells[i].Value) < Convert.ToInt32(dataGridView5.Rows[k].Cells[j].Value)) //если главный элемент значимее элемента для сравнения, то                                                                             
-                                {
-                                //dataGridView7[i, j].Value = Convert.ToInt32(dataGridView7[i, j].Value) + 1;
-                                arr[i, j] = arr[i, j] + 1;
-                                }
-                            }
-                        }
-                    }
-                }
-
-            int[] max = new int[dataGridView5.ColumnCount];
-            int maxv = 0;
-            //выбрать минимальное по строкам, побеждает с максимальным из мах
-            for (int i = 0; i < dataGridView5.RowCount -1;i++)
+            int[,] array = new int[dataGridView5.RowCount - 1, dataGridView5.ColumnCount];
+            for (int i = 0; i < dataGridView5.RowCount - 1; i++)
             {
-                maxv = arr[1, 2];
                 for (int j = 0; j < dataGridView5.ColumnCount; j++)
                 {
-                    if (arr[i, j] < maxv && arr[i,j]!=0)
-                        maxv = arr[i, j];  
+                    array[i, j] = Convert.ToInt32(dataGridView5[i, j].Value);
                 }
-                max[i] = maxv;
             }
 
-            //вывести в грид решения
-            for (int i = 0; i < dataGridView5.ColumnCount; i++)
+            //решение
+            int[] reshenie = solu.simpson(array);
+
+            //загружаем решение
+            for (int k = 0; k < reshenie.GetLength(0); k++)
             {
-                dataGridView6.Rows.Add(max[i].ToString());
+                dataGridView6[0, k].Value = reshenie[k];
             }
 
         }
@@ -271,6 +268,9 @@ namespace WindowsFormsApplication20
             dataGridView5.Rows.Add(row);
             row = new string[] { "3", "2", "4", "1", "5" };
             dataGridView5.Rows.Add(row);
+
+            for (int i = 0; i < 5; i++)
+                dataGridView6.Rows.Add("0");
         }
 
         private void button12_Click(object sender, EventArgs e)
