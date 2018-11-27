@@ -29,3 +29,23 @@ C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplicati
 C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.exe
 C:\Users\Admin\Desktop\Истомин\laba4\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.pdb
+C:\Users\DatBoi\Downloads\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\bin\Debug\WindowsFormsApplication20.exe.config
+C:\Users\DatBoi\Downloads\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.exe
+C:\Users\DatBoi\Downloads\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.pdb
+C:\Users\DatBoi\Downloads\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\bin\Debug\WindowsFormsApplication20.exe
+C:\Users\DatBoi\Downloads\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.csprojResolveAssemblyReference.cache
+C:\Users\DatBoi\Downloads\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.baza.resources
+C:\Users\DatBoi\Downloads\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.Form1.resources
+C:\Users\DatBoi\Downloads\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.Properties.Resources.resources
+C:\Users\DatBoi\Downloads\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.csproj.GenerateResource.Cache
+C:\Users\DatBoi\Downloads\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\bin\Debug\WindowsFormsApplication20.pdb
+C:\Users\Evsei\Desktop\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\bin\Debug\WindowsFormsApplication20.exe.config
+C:\Users\Evsei\Desktop\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\bin\Debug\WindowsFormsApplication20.exe
+C:\Users\Evsei\Desktop\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\bin\Debug\WindowsFormsApplication20.pdb
+C:\Users\Evsei\Desktop\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.csprojAssemblyReference.cache
+C:\Users\Evsei\Desktop\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.Form1.resources
+C:\Users\Evsei\Desktop\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.Properties.Resources.resources
+C:\Users\Evsei\Desktop\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.csproj.GenerateResource.cache
+C:\Users\Evsei\Desktop\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.csproj.CoreCompileInputs.cache
+C:\Users\Evsei\Desktop\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.exe
+C:\Users\Evsei\Desktop\ISIT_lab4-master (1)\ISIT_lab4-master\4 lab ИСИТ\WindowsFormsApplication20\obj\Debug\WindowsFormsApplication20.pdb

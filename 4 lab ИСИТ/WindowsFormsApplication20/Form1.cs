@@ -20,15 +20,15 @@ namespace WindowsFormsApplication20
 
         private void button2_Click(object sender, EventArgs e)
         {
-            baza b = new baza();
-            b.Show();
+            //    baza b = new baza();
+            //    b.Show();
         }
 
         private void variousBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.variousBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bazaDataSet);
+            //this.Validate();
+            //this.variousBindingSource.EndEdit();
+            //this.tableAdapterManager.UpdateAll(this.bazaDataSet);
 
         }
 
@@ -37,10 +37,10 @@ namespace WindowsFormsApplication20
             // TODO: данная строка кода позволяет загрузить данные в таблицу "bazaDataSet.various". При необходимости она может быть перемещена или удалена.
             //this.variousTableAdapter.Fill(this.bazaDataSet.various);
 
-            foreach (DataGridViewRow check in variousDataGridView.Rows)
-            {
-                listBox1.Items.Add(Convert.ToString(check.Cells[1].Value));
-            }
+            //foreach (DataGridViewRow check in variousDataGridView.Rows)
+            //{
+            //    listBox1.Items.Add(Convert.ToString(check.Cells[1].Value));
+            //}
 
 
         }
@@ -53,49 +53,49 @@ namespace WindowsFormsApplication20
             button2.Enabled = false;
             button1.Enabled = false;
 
-            foreach (DataGridViewRow spisok in variousDataGridView.Rows)
-            {
-                //richTextBox1.Text = "Вы готовы выбрать: " + Convert.ToString(spisok.Cells[1].Value) + "?";
-                DialogResult dialogResult = MessageBox.Show("Вы готовы выбрать: " + Convert.ToString(spisok.Cells[1].Value) + "?", "ГОЛОСОВАНИЕ", MessageBoxButtons.YesNo);
+            //foreach (DataGridViewRow spisok in variousDataGridView.Rows)
+            //{
+            //    //richTextBox1.Text = "Вы готовы выбрать: " + Convert.ToString(spisok.Cells[1].Value) + "?";
+            //    DialogResult dialogResult = MessageBox.Show("Вы готовы выбрать: " + Convert.ToString(spisok.Cells[1].Value) + "?", "ГОЛОСОВАНИЕ", MessageBoxButtons.YesNo);
 
-                if (dialogResult == DialogResult.Yes)
-                {
-                    int yes = Convert.ToInt32(spisok.Cells[2].Value);
-                    yes++;
-                    Convert.ToString(spisok.Cells[2].Value = yes);
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    int no = Convert.ToInt32(spisok.Cells[3].Value);
-                    no++;
-                    Convert.ToString(spisok.Cells[3].Value = no);
-                }
-                int max = 0;
-                foreach (DataGridViewRow check in variousDataGridView.Rows)
-                {
-                    if (Convert.ToInt32(check.Cells[2].Value) > max)
-                    {
-                        max = Convert.ToInt32(check.Cells[2].Value);
-                        label3.Text = "На данный момент победитель: " + Convert.ToString(check.Cells[1].Value);
-                    }
-                }
-            }
+            //    if (dialogResult == DialogResult.Yes)
+            //    {
+            //        int yes = Convert.ToInt32(spisok.Cells[2].Value);
+            //        yes++;
+            //        Convert.ToString(spisok.Cells[2].Value = yes);
+            //    }
+            //    else if (dialogResult == DialogResult.No)
+            //    {
+            //        int no = Convert.ToInt32(spisok.Cells[3].Value);
+            //        no++;
+            //        Convert.ToString(spisok.Cells[3].Value = no);
+            //    }
+            //    int max = 0;
+            //    foreach (DataGridViewRow check in variousDataGridView.Rows)
+            //    {
+            //        if (Convert.ToInt32(check.Cells[2].Value) > max)
+            //        {
+            //            max = Convert.ToInt32(check.Cells[2].Value);
+            //            label3.Text = "На данный момент победитель: " + Convert.ToString(check.Cells[1].Value);
+            //        }
+            //    }
+            //}
             MessageBox.Show("Спасибо за ответы!");
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            variousDataGridView.Rows[listBox1.SelectedIndex].Cells[2].Value = Convert.ToInt32(variousDataGridView.Rows[listBox1.SelectedIndex].Cells[2].Value) + 1;
-            MessageBox.Show("Спасибо, что выбрали: " + listBox1.SelectedItem.ToString());
+            //variousDataGridView.Rows[listBox1.SelectedIndex].Cells[2].Value = Convert.ToInt32(variousDataGridView.Rows[listBox1.SelectedIndex].Cells[2].Value) + 1;
+            //MessageBox.Show("Спасибо, что выбрали: " + listBox1.SelectedItem.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e) //обнуляем список голосов ЗА
         {
-            foreach (DataGridViewRow check in variousDataGridView.Rows)
-            {
-                check.Cells[2].Value = 0;
-            }
+            //foreach (DataGridViewRow check in variousDataGridView.Rows)
+            //{
+            //    check.Cells[2].Value = 0;
+            //}
         }
 
         private void button7_Click(object sender, EventArgs e) //подсчет голосов
@@ -153,7 +153,7 @@ namespace WindowsFormsApplication20
             {
                 for (int j = 0; j < dataGridView3.ColumnCount; j++)
                 {
-                    array[i, j] = Convert.ToInt32(dataGridView3[i, j].Value);
+                    array[i, j] = Convert.ToInt32(dataGridView3[j, i].Value);
                 }
             }
 
@@ -194,61 +194,24 @@ namespace WindowsFormsApplication20
 
         private void button10_Click(object sender, EventArgs e)
         {
-            string[] temp = new string[dataGridView9.RowCount - 1];
-
-            for (int i = 0; i < dataGridView9.RowCount-1; i++)
+            string[,] array = new string[dataGridView9.RowCount - 1, dataGridView9.ColumnCount];
+            for (int i = 0; i < dataGridView9.RowCount - 1; i++)
             {
-                temp[i] = "";
                 for (int j = 0; j < dataGridView9.ColumnCount; j++)
                 {
-                    temp[i] += dataGridView9[j,i].Value.ToString();
+                    array[i, j] = dataGridView9[j, i].Value.ToString();
                 }
             }
 
-            List<string> tt = new List<string>();//сами варианты 12345, 12354 и т.д.
-            tt.Add( temp[0]);
-            List<int> tt2 = new List<int>();//их кол-во
-            tt2.Add(1);
-            bool a;
-            for (int i =1; i < dataGridView9.RowCount - 1; i++)//группируем голоса
-            {
-                a = false;
-                for (int j = 0; j<tt.Count; j++)
-                {
-                    if (tt[j] == temp[i])
-                    {
-                        a = true;
-                        tt2[j]++;
-                    }
-
-                }
-                if (!a)
-                {
-                    tt.Add(temp[i]);
-                    tt2.Add(1);
-                }
-            }
-            int candidatcount = dataGridView9.ColumnCount;
-            int[] candidat = new int[candidatcount];//candidat[x] += tt2[i] * ball in tt[i]
-            for (int i = 0; i<tt.Count; i++)//из всех групп 12345 берем каждую группу отдельно и считаем баллы
-                for (int j = 0; j<tt[i].Length; j++)//выбирае каждого кандидата из группы 1>2>3>4>5
-                {
-                    string pos = Convert.ToString(tt[i][j]);
-                    if (j< tt[i].Length-1)//если позиция кандидата не последняя
-                    candidat[Convert.ToInt32(pos)-1] += tt2[i] * (candidatcount - j);
-                }
+            int[] candidat = solu.board(array, dataGridView9.RowCount, dataGridView9.ColumnCount);
             dataGridView8.Rows.Clear();
-            int max = 0, maxi = 0;
+            int max, maxi;
             for (int i = 0; i<candidat.Length; i++)
             {
-                if (candidat[i] > max)
-                {
-                    max = candidat[i];
-                    maxi = i+1;
-                }
                 dataGridView8.Rows.Add(candidat[i].ToString());
             }
 
+            solu.maximum(candidat,out max,out maxi);
 
             label4.Text = "Победитель: \nкандидат \"a" + maxi + "\" набрал " + max + " баллов";
         }
