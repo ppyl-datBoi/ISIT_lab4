@@ -48,10 +48,15 @@ namespace WindowsFormsApplication20
         private void button6_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Добро пожаловать");
-            button3.Visible = true;
-            button4.Visible = true;
-            button2.Enabled = false;
-            button1.Enabled = false;
+            listBox1.Items.Add("Лёха");
+            listBox1.Items.Add("Не Лёха");
+
+            for(int i = 0; i<listBox1.Items.Count;i++)
+            dataGridView7.Rows.Add(i+1, listBox1.Items[i], "0", "0%");
+
+            solu.ClearVotes();
+            solu.CreateVotesMass(listBox1.Items.Count);
+            label1.Text = "Избиратель № 1";
 
             //foreach (DataGridViewRow spisok in variousDataGridView.Rows)
             //{
@@ -298,6 +303,20 @@ namespace WindowsFormsApplication20
 
             for (int i = 0; i < 5; i++)
                 dataGridView8.Rows.Add("0");
+        }
+
+        private void dataGridView7_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            solu.Bolshinstvo(listBox1.SelectedIndex);
+            for (int i = 0; i < solu.votes.Length; i++)
+                dataGridView7.Rows[i].Cells[2].Value = solu.votes[i];
+            for (int i = 0; i < solu.percents.Length; i++)
+                dataGridView7.Rows[i].Cells[3].Value = (Math.Round(solu.percents[i],4)*100).ToString() + "%";
         }
     }
     }

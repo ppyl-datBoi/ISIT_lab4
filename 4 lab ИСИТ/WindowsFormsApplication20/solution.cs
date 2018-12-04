@@ -7,6 +7,32 @@ namespace WindowsFormsApplication20
 {
     class solution
     {
+        public int[] votes { get; private set; }
+        public double[] percents { get; private set; }
+        
+        public void ClearVotes()//сброс голосов
+        {
+            votes = null;
+        }
+
+        public void CreateVotesMass(int count)//создание массива для подсчета голосов
+        {
+            votes = new int[count];
+            percents = new double[count];
+        }
+
+        public void Bolshinstvo(int index)//добавление голоса определеннному кандидату
+        {
+            votes[index]++;
+            int summ = 0;
+            foreach (int a in votes)
+                summ += a;
+            for (int i = 0; i < percents.Length; i++)
+                percents[i] = (double)votes[i] / (double)summ;
+
+        }
+
+
         public int[] yavno(int[,] arr) //явный победитель
         {
             int n = arr.GetLength(0);
