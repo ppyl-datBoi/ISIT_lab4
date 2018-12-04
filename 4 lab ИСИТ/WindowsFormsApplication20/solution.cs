@@ -9,16 +9,20 @@ namespace WindowsFormsApplication20
     {
         public int[] votes { get; private set; }
         public double[] percents { get; private set; }
-        
+        public int chelik { get; private set; }
+
         public void ClearVotes()//сброс голосов
         {
             votes = null;
+            percents = null;
+            chelik = 0;
         }
 
         public void CreateVotesMass(int count)//создание массива для подсчета голосов
         {
             votes = new int[count];
             percents = new double[count];
+            chelik = 1;
         }
 
         public void Bolshinstvo(int index)//добавление голоса определеннному кандидату
@@ -28,11 +32,35 @@ namespace WindowsFormsApplication20
             foreach (int a in votes)
                 summ += a;
             for (int i = 0; i < percents.Length; i++)
-                percents[i] = (double)votes[i] / (double)summ;
-
+                percents[i] = Math.Round((double)votes[i] / (double)summ, 4) * 100;
+            chelik++;
         }
 
-
+        public int[] SelectPobeditel()//выводим двух кандидатов, набравших наибольшее кол-во голосов
+        {
+            int[] rez = new int[2];
+            int max1, max2, maxi1, maxi2;
+            max1 = max2 = maxi1 = maxi2 = 0;
+            for(int i = 0; i<votes.Length;i++)
+            {
+                if(votes[i]>max1)
+                {
+                    max2 = max1;
+                    maxi2 = maxi1;
+                    max1 = votes[i];
+                    maxi1 = i;
+                    continue;
+                }
+                if(votes[i]>max2)
+                {
+                    max2 = votes[i];
+                    maxi2 = i;
+                }
+            }
+            rez[0] = maxi1;
+            rez[1] = maxi2;
+            return rez;
+        }
         public int[] yavno(int[,] arr) //явный победитель
         {
             int n = arr.GetLength(0);

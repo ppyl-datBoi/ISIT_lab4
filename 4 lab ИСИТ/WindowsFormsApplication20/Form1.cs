@@ -20,87 +20,92 @@ namespace WindowsFormsApplication20
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //    baza b = new baza();
-            //    b.Show();
         }
 
         private void variousBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            //this.Validate();
-            //this.variousBindingSource.EndEdit();
-            //this.tableAdapterManager.UpdateAll(this.bazaDataSet);
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "bazaDataSet.various". При необходимости она может быть перемещена или удалена.
-            //this.variousTableAdapter.Fill(this.bazaDataSet.various);
-
-            //foreach (DataGridViewRow check in variousDataGridView.Rows)
-            //{
-            //    listBox1.Items.Add(Convert.ToString(check.Cells[1].Value));
-            //}
-
 
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Добро пожаловать");
-            listBox1.Items.Add("Лёха");
-            listBox1.Items.Add("Не Лёха");
+            if(button6.Text == "Начать голосование")
+            {
+                //очистка значений
+                solu.ClearVotes();
+                listBox1.Items.Clear();
+                dataGridView7.Rows.Clear();
+                //добавление кандидатов
+                listBox1.Items.Add("Лёха");
+                listBox1.Items.Add("Не Лёха");
+                listBox1.Items.Add("Староста");
+                listBox1.Items.Add("Не Староста");
+                listBox1.Items.Add("Боулер");
+                listBox1.Items.Add("Не боулер");
+                listBox1.Items.Add("Симор");
+                solu.CreateVotesMass(listBox1.Items.Count);
+                for (int i = 0; i < listBox1.Items.Count; i++)
+                    dataGridView7.Rows.Add(i + 1, listBox1.Items[i], "0", "0%");
+                //различные параметры
+                label1.Text = "Избиратель № 1";
+                button6.Text = "Завершить голосование";
+                button3.Enabled = true;
+                dataGridView7.Enabled = true;
+                listBox1.Enabled = true;
+                label1.Enabled = true;
+            }
+            else
+            {
+                button6.Text = "Голосование завершено";
+                button3.Enabled = false;
+                listBox1.Enabled = false;
+                button6.Enabled = false;
+                label1.Enabled = false;
+                int[] rez = solu.SelectPobeditel();
+                string resultat;
+                if (solu.votes[rez[1]] == solu.votes[rez[0]]) resultat = "Победителя нет";
+                else resultat = "Победитель " + listBox1.Items[rez[0]];
+                richTextBox1.Text = resultat + ", так как лучшие результаты набрали: " + 
+                    listBox1.Items[rez[0]] + ", набрал " + solu.votes[rez[0]] + " голосов и " + 
+                    listBox1.Items[rez[1]] + ", набрал " + solu.votes[rez[1]] + " голосов";
+            }
+        }
 
-            for(int i = 0; i<listBox1.Items.Count;i++)
-            dataGridView7.Rows.Add(i+1, listBox1.Items[i], "0", "0%");
-
-            solu.ClearVotes();
-            solu.CreateVotesMass(listBox1.Items.Count);
-            label1.Text = "Избиратель № 1";
-
-            //foreach (DataGridViewRow spisok in variousDataGridView.Rows)
-            //{
-            //    //richTextBox1.Text = "Вы готовы выбрать: " + Convert.ToString(spisok.Cells[1].Value) + "?";
-            //    DialogResult dialogResult = MessageBox.Show("Вы готовы выбрать: " + Convert.ToString(spisok.Cells[1].Value) + "?", "ГОЛОСОВАНИЕ", MessageBoxButtons.YesNo);
-
-            //    if (dialogResult == DialogResult.Yes)
-            //    {
-            //        int yes = Convert.ToInt32(spisok.Cells[2].Value);
-            //        yes++;
-            //        Convert.ToString(spisok.Cells[2].Value = yes);
-            //    }
-            //    else if (dialogResult == DialogResult.No)
-            //    {
-            //        int no = Convert.ToInt32(spisok.Cells[3].Value);
-            //        no++;
-            //        Convert.ToString(spisok.Cells[3].Value = no);
-            //    }
-            //    int max = 0;
-            //    foreach (DataGridViewRow check in variousDataGridView.Rows)
-            //    {
-            //        if (Convert.ToInt32(check.Cells[2].Value) > max)
-            //        {
-            //            max = Convert.ToInt32(check.Cells[2].Value);
-            //            label3.Text = "На данный момент победитель: " + Convert.ToString(check.Cells[1].Value);
-            //        }
-            //    }
-            //}
-            MessageBox.Show("Спасибо за ответы!");
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите кандидата!");
+                return;
+            }
+            solu.Bolshinstvo(listBox1.SelectedIndex);
+            for (int i = 0; i < solu.votes.Length; i++)
+                dataGridView7.Rows[i].Cells[2].Value = solu.votes[i];
+            for (int i = 0; i < solu.percents.Length; i++)
+                dataGridView7.Rows[i].Cells[3].Value = solu.percents[i].ToString() + "%";
+            label1.Text = "Избиратель № " + solu.chelik;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            //variousDataGridView.Rows[listBox1.SelectedIndex].Cells[2].Value = Convert.ToInt32(variousDataGridView.Rows[listBox1.SelectedIndex].Cells[2].Value) + 1;
-            //MessageBox.Show("Спасибо, что выбрали: " + listBox1.SelectedItem.ToString());
         }
 
-        private void button1_Click(object sender, EventArgs e) //обнуляем список голосов ЗА
+        private void button1_Click(object sender, EventArgs e) //обнуляем список голосов 
         {
-            //foreach (DataGridViewRow check in variousDataGridView.Rows)
-            //{
-            //    check.Cells[2].Value = 0;
-            //}
+            if(tabControl1.SelectedIndex == 0)
+            {
+                dataGridView7.Rows.Clear();
+                button6.Text = "Начать голосование";
+                button6.Enabled = true;
+                richTextBox1.Text = "";
+                button2.Enabled = false;
+                listBox1.Enabled = false;
+            }
         }
 
         private void button7_Click(object sender, EventArgs e) //подсчет голосов
@@ -218,7 +223,7 @@ namespace WindowsFormsApplication20
 
             solu.maximum(candidat,out max,out maxi);
 
-            label4.Text = "Победитель: \nкандидат \"a" + maxi + "\" набрал " + max + " баллов";
+            richTextBox2.Text = "Победитель: \r\nкандидат " + dataGridView9.Columns[maxi].HeaderText + " набрал " + max + " баллов";//\"a" + maxi + "\"
         }
         
 
@@ -310,14 +315,6 @@ namespace WindowsFormsApplication20
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            solu.Bolshinstvo(listBox1.SelectedIndex);
-            for (int i = 0; i < solu.votes.Length; i++)
-                dataGridView7.Rows[i].Cells[2].Value = solu.votes[i];
-            for (int i = 0; i < solu.percents.Length; i++)
-                dataGridView7.Rows[i].Cells[3].Value = (Math.Round(solu.percents[i],4)*100).ToString() + "%";
-        }
     }
     }
 
