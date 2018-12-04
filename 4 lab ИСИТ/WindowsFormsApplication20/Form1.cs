@@ -20,28 +20,17 @@ namespace WindowsFormsApplication20
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //    baza b = new baza();
-            //    b.Show();
+
         }
 
         private void variousBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            //this.Validate();
-            //this.variousBindingSource.EndEdit();
-            //this.tableAdapterManager.UpdateAll(this.bazaDataSet);
+
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "bazaDataSet.various". При необходимости она может быть перемещена или удалена.
-            //this.variousTableAdapter.Fill(this.bazaDataSet.various);
-
-            //foreach (DataGridViewRow check in variousDataGridView.Rows)
-            //{
-            //    listBox1.Items.Add(Convert.ToString(check.Cells[1].Value));
-            //}
-
 
         }
 
@@ -56,36 +45,10 @@ namespace WindowsFormsApplication20
 
             solu.ClearVotes();
             solu.CreateVotesMass(listBox1.Items.Count);
-            label1.Text = "Избиратель № 1";
-
-            //foreach (DataGridViewRow spisok in variousDataGridView.Rows)
-            //{
-            //    //richTextBox1.Text = "Вы готовы выбрать: " + Convert.ToString(spisok.Cells[1].Value) + "?";
-            //    DialogResult dialogResult = MessageBox.Show("Вы готовы выбрать: " + Convert.ToString(spisok.Cells[1].Value) + "?", "ГОЛОСОВАНИЕ", MessageBoxButtons.YesNo);
-
-            //    if (dialogResult == DialogResult.Yes)
-            //    {
-            //        int yes = Convert.ToInt32(spisok.Cells[2].Value);
-            //        yes++;
-            //        Convert.ToString(spisok.Cells[2].Value = yes);
-            //    }
-            //    else if (dialogResult == DialogResult.No)
-            //    {
-            //        int no = Convert.ToInt32(spisok.Cells[3].Value);
-            //        no++;
-            //        Convert.ToString(spisok.Cells[3].Value = no);
-            //    }
-            //    int max = 0;
-            //    foreach (DataGridViewRow check in variousDataGridView.Rows)
-            //    {
-            //        if (Convert.ToInt32(check.Cells[2].Value) > max)
-            //        {
-            //            max = Convert.ToInt32(check.Cells[2].Value);
-            //            label3.Text = "На данный момент победитель: " + Convert.ToString(check.Cells[1].Value);
-            //        }
-            //    }
-            //}
-            MessageBox.Show("Спасибо за ответы!");
+            //label1.Text = "Избиратель № 1";
+            label3.Text = "1";
+           
+            //MessageBox.Show("Спасибо за ответы!");
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,30 +91,6 @@ namespace WindowsFormsApplication20
 
         private void button8_Click(object sender, EventArgs e)
         {
-            //foreach (DataGridViewRow dgw in dataGridView3.Rows) //для каждого эксперта высчитываем
-            //{
-            //    for (int i = 0; i < dataGridView3.ColumnCount; i++) //главный элемент
-            //    {
-            //        for (int j = 0; j < dataGridView3.ColumnCount; j++) //элемент с которым сравниваем
-            //        {
-            //            if (i != j) //не сравнимаем с самим собой
-            //            {
-            //                if (Convert.ToInt32(dgw.Cells[i].Value) < Convert.ToInt32(dgw.Cells[j].Value)) //если главный элемент значимее элемента для сравнения, то
-            //                //  if(Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value) > Convert.ToInt32(dataGridView1.Rows[i].Cells[j].Value))
-            //                {
-            //                    //listBox2.Items. = Convert.ToInt32(listBox2.Items[1]) + 1;
-            //                    dataGridView4.Rows[i].Cells[0].Value = Convert.ToInt32(dataGridView4.Rows[i].Cells[0].Value) + 1; //в таблицу результатов добавляем +1
-
-            //                }
-            //                else
-            //                {
-            //                    dataGridView4.Rows[i].Cells[0].Value = Convert.ToInt32(dataGridView4.Rows[i].Cells[0].Value) - 1;
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-
             //передача в массив
             int[,] array = new int[dataGridView3.RowCount - 1, dataGridView3.ColumnCount];
             for (int i = 0; i < dataGridView3.RowCount - 1; i++)
@@ -317,6 +256,9 @@ namespace WindowsFormsApplication20
                 dataGridView7.Rows[i].Cells[2].Value = solu.votes[i];
             for (int i = 0; i < solu.percents.Length; i++)
                 dataGridView7.Rows[i].Cells[3].Value = (Math.Round(solu.percents[i],4)*100).ToString() + "%";
+            int b = Convert.ToInt32(label3.Text);
+            b++;
+            label3.Text = b.ToString();
         }
     }
     }
